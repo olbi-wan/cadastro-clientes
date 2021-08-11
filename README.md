@@ -1,5 +1,6 @@
 ![Platform Builders](https://img.shields.io/badge/Platform-Builders-yellow)
 [![Build Status](https://travis-ci.com/olbi-wan/cadastro-clientes.svg?branch=main)](https://travis-ci.com/olbi-wan/cadastro-clientes)
+[![codecov](https://codecov.io/gh/olbi-wan/cadastro-clientes/branch/main/graph/badge.svg?token=hVdNFsNmqN)](https://codecov.io/gh/olbi-wan/cadastro-clientes)
 
 <p align="left">
    <img src="https://platformbuilders.io/assets/images/logo.png" width="340" alt="Platform Builders">
@@ -12,7 +13,7 @@
     <a href="#projeto">Projeto</a>
   <i/>
 </p>
-   
+
 ## Introdução
    
 Olá novamente! Primeiramente muito obrigado pela nova oportunidade e desculpa a demora, meu notebook não ajudou muito dessa vez.
@@ -26,6 +27,8 @@ Nesse novo projeto, tentei complicar um poquinho as coisas para tentar apresenta
 
 ## Projeto
 
+Pequeno DevOps (compilação, cobertura): *[Travis CI](https://travis-ci.com/github/olbi-wan/cadastro-clientes), [Codecov](https://app.codecov.io/gh/olbi-wan/cadastro-clientes)*.
+   
 #### H2 Database
    
 Base de dados configurada na memória.
