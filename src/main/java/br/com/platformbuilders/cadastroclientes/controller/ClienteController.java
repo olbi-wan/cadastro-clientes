@@ -1,5 +1,7 @@
 package br.com.platformbuilders.cadastroclientes.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,7 +44,7 @@ public class ClienteController {
      * @return {@link Cliente} com ID
      */
     @PostMapping("/{usuarioId}")
-    public Cliente cadastrar(@PathVariable long usuarioId, @RequestBody Cliente cliente) {
+    public Cliente cadastrar(@PathVariable long usuarioId, @Valid @RequestBody Cliente cliente) {
         return business.cadastrar(usuarioId, cliente);
     }
 

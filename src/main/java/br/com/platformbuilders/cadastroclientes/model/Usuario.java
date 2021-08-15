@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,9 +25,12 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    // As mensagens deveriam estar centralizadas em um arquivo de propriedades, mas por questao de simplicidade foram declaradas aqui.
+    @NotBlank(message = "O e-mail é obrigatório.")
     private String email;
 
     @Setter
+    @NotBlank(message = "A senha é obrigatória.")
     private String senha;
 
     /**

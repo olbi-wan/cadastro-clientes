@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,10 +28,14 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    // As mensagens deveriam estar centralizadas em um arquivo de propriedades, mas por questao de simplicidade foram declaradas aqui.
+    @NotBlank(message = "O estado do endereço é obrigatório.")
     private String estado;
 
+    @NotBlank(message = "O logradouro do endereço é obrigatório.")
     private String logradouro;
 
+    @NotBlank(message = "O número do endereço é obrigatório.")
     private String numero;
 
 

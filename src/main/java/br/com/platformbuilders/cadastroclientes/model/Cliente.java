@@ -13,10 +13,15 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,13 +49,17 @@ public class Cliente {
     @Id
     private Long id;
 
+    // As mensagens deveriam estar centralizadas em um arquivo de propriedades, mas por questao de simplicidade foram declaradas aqui.
+    @NotBlank(message = "O nome é obrigatório.")
     private String nome;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
+    @NotNull(message = "A data de nascimento é obritatória.")
     private LocalDate nascimento;
 
+    @NotEmpty(message = "Pelo menos um endereço deve ser informado.")
     @ManyToMany(cascade = CascadeType.ALL)
-    private Collection<Endereco> enderecos;
+    private Collection<@Valid Endereco> enderecos;
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
@@ -77,6 +86,7 @@ public class Cliente {
      * <i>https://martinfowler.com/bliki/TellDontAsk.html</i>
      * @return {@link Endereco} de entrega
      */
+    @JsonProperty("endereco_entrega")
     public Optional<Endereco> getEnderecoEntrega() {
         return enderecos.stream().filter(Endereco::isEntrega).findFirst();
     }
@@ -86,6 +96,7 @@ public class Cliente {
      * <i>https://martinfowler.com/bliki/TellDontAsk.html</i>
      * @return {@link Endereco} principal
      */
+    @JsonProperty("endereco_principal")
     public Optional<Endereco> getEnderecoPrincipal() {
         return enderecos.stream().min(comparingLong(Endereco::getId));
     }

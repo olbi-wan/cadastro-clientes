@@ -19,16 +19,29 @@
 Olá novamente! Primeiramente muito obrigado pela nova oportunidade e desculpa a demora, meu notebook não ajudou muito dessa vez.
 Nesse novo projeto, tentei complicar um poquinho as coisas para tentar apresentar um pouco mais. Espero que gostem.
 
+Podem achar que não utilizei **SOLID** em toda sua essência... eu não costumo criar uma interface para "apenas uma" classe, mas sim quando ela faz realmente sentido.
+Quando temos 1x1 não vejo um grau de desacoplamento e abstração muito grande.
+   
 ## Instalação
 
-* [x] abra o terminal e confirme a versão com o comando `java --version` (a versão 11 terá que estar instalada).
-* [x] realize o download do [Eclipse](https://www.eclipse.org/downloads/packages).
+* [x] abra o terminal e confirme a versão com o comando `java --version` (a versão 11 ou superior terá que estar instalada).
+* [x] realize o download do [Eclipse](https://www.eclipse.org/downloads/packages) ou do [IntelliJ](https://www.jetbrains.com/pt-br/idea/download).
 * [x] baixe o projeto do GitHub com `git clone`.
+   
+### Apêndice
+* [x] para degustar a API, utilize o [Postman](https://www.postman.com/downloads)  v8.10.0 ou superior.
+   - `/postman/cadastro-clientes.postman_collection.json`
+   - `/postman/cadastro-clientes.local.postman_environment.json`
+* [x] o diagrama de classes foi desenhado no site do [Draw.io](https://app.diagrams.net).
+   - `/drawio/digrama de classes.drawio`
+   - `/drawio/digrama de classes.png`
+* [x] o desenho do banco de dados foi feito através do site [DBDesigner](https://www.dbdesigner.net).
+   - `/dbdesigner/banco de dados.png`
 
 ## Projeto
 
 Pequeno DevOps (compilação, cobertura): *[Travis CI](https://travis-ci.com/github/olbi-wan/cadastro-clientes), [Codecov](https://app.codecov.io/gh/olbi-wan/cadastro-clientes)*.
-   
+
 #### H2 Database
    
 Base de dados configurada na memória.
@@ -68,4 +81,4 @@ mockMvc.perform(post("/usuario")
 // ...
 given().body(EMPTY).contentType(JSON).when().post("/cliente/{usuarioId}", 1).then().statusCode(400);
 // ...
-```   
+```

@@ -27,7 +27,7 @@ public class UsuarioControllerTest {
     @Autowired private ObjectMapper objectMapper;
 
     @Test
-    public void dadoCadastrar_quandoEmailInexistente_entaoUsuarioCadastro() throws Exception {
+    public void dadoCadastrar_quandoEmailInexistente_entaoCadastrarUsuario() throws Exception {
 
         final var json = new Usuario(1L, make(), make());
 

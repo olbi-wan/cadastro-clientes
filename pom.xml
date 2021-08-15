@@ -12,7 +12,7 @@
 
     <groupId>br.com.platformbuilders</groupId>
     <artifactId>cadastro-clientes</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <properties>
         <java.version>11</java.version>
@@ -30,6 +30,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Bean Validation - https://beanvalidation.org -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId> 
+            <artifactId>spring-boot-starter-validation</artifactId> 
         </dependency>
 
         <!-- Spring MVC - https://spring.io/guides/gs/serving-web-content -->
